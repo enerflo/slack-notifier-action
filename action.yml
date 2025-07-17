@@ -1,0 +1,21 @@
+name: 'Post Notifications To Slack'
+description: 'Post a notification message to Slack with support for pre-formatted templates for common use-cases'
+inputs:
+  channels:
+    description: "A comma-separated list of one or more Slack channel IDs to which to post the notification"
+    required: true
+  token:
+    description: "An OAuth token for the Slack bot"
+    required: true
+  template:
+    description: "The name of the message template to use, one of: none, workflow-failure, build-failure"
+    default: "none"
+  severity:
+    description: "The severity of the message, affecting banner formatting in certain template. One of: info, warning, error"
+  content:
+    description: "Contents to post in the message, either following the template content or as the entire content when not using a template"
+  app:
+    description: "The name of the app that is relevant to the notification, used in the build-failure template"
+runs:
+  using: 'node20'
+  main: 'index.js'
