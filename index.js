@@ -16,6 +16,14 @@ function renderContent() {
   }
 }
 
+function getSeverity(d) {
+  let input = core.getInput("severity");
+  if (input) {
+    return input;
+  }
+  return d;
+}
+
 function severityIndicator(severity) {
   switch (severity) {
     case "info":
@@ -40,7 +48,7 @@ function workflowRunURL() {
 }
 
 function workflowFailureTemplate() {
-  const severity = core.getInput("severity") ?? "error";
+  const severity = getSeverity("error");
   const content = core.getInput("content");
 
   const indicator = severityIndicator(severity);
@@ -60,7 +68,7 @@ ${content}
 }
 
 function buildFailureTemplate() {
-  const severity = core.getInput("severity") ?? "error";
+  const severity = getSeverity("error");
   const content = core.getInput("content");
 
   const indicator = severityIndicator(severity);
