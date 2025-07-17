@@ -98,7 +98,7 @@ class SlackClient {
       core.info(`posting to ${info.channel.name}`);
       await this.client.chat.postMessage({
         channel,
-        content,
+        text: content,
       });
     }
   }
