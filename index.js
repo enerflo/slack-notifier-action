@@ -27,7 +27,7 @@ function getSeverity(d) {
 function severityIndicator(severity) {
   switch (severity) {
     case "info":
-      return ":information_source";
+      return ":information_source:";
     case "warning":
       return ":warning:";
     case "error":
