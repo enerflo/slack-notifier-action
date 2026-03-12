@@ -17,5 +17,5 @@ inputs:
   app:
     description: "The name of the app that is relevant to the notification, used in the build-failure template"
 runs:
-  using: 'node20'
+  using: 'node24'
   main: 'index.js'
